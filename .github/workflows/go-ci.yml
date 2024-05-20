@@ -17,25 +17,25 @@ jobs:
         with:
           go-version: 1.22.3
       - name: Install dependencies
-        working-directory: ./go-app
+        working-directory: ${{ github.workspace }}/go-app
         run: go mod tidy && go get github.com/golangci/golangci-lint/cmd/golangci-lint@latest
   Test:
     runs-on: ubuntu-latest
     needs: Setup
     steps:
       - name: Run linter
-        working-directory: go-app
+        working-directory: ${{ github.workspace }}/go-app
         run: go run github.com/golangci/golangci-lint/cmd/golangci-lint run
       - name: Run tests
-        working-directory: go-app  
+        working-directory: ${{ github.workspace }}/go-app  
         run: go test ./...
   Build:
     runs-on: ubuntu-latest
     needs: Test
     steps:
       - name: Create Docker Image
-        working-directory: go-app
+        working-directory: ${{ github.workspace }}/go-app
         run: docker build -t shraiyaparashar31/inc_42/go-app .
       - name: Push Docker Image
-        working-directory: go-app  
+        working-directory: ${{ github.workspace }}/go-app  
         run: docker push shraiyaparashar31/inc_42/go-app
