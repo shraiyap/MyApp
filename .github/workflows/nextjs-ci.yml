@@ -1,4 +1,4 @@
-name: Next.js CI
+name: NextJS-CI-Pipeline
 
 on:
   push:
@@ -17,8 +17,11 @@ jobs:
         with:
           node-version: '14'
       - name: Install dependencies
+        working-directory: ${{ github.workspace }}/nextjs-app
         run: npm install
       - name: Run linter
+        working-directory: ${{ github.workspace }}/nextjs-app 
         run: npm run lint
       - name: Run tests
+        working-directory: ${{ github.workspace }}/nextjs-app
         run: npm test
