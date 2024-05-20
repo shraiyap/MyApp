@@ -21,6 +21,7 @@ jobs:
         run: go mod tidy && go get github.com/golangci/golangci-lint/cmd/golangci-lint@latest
   Test:
     runs-on: ubuntu-latest
+    needs: Setup
     steps:
       - name: Run linter
         working-directory: go-app
@@ -30,6 +31,7 @@ jobs:
         run: go test ./...
   Build:
     runs-on: ubuntu-latest
+    needs: Test
     steps:
       - name: Create Docker Image
         working-directory: go-app
