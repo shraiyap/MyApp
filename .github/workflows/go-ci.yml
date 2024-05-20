@@ -21,7 +21,7 @@ jobs:
         run: go mod tidy
       - name: Run linter
         working-directory: ./go-app
-        run: pwd && go run github.com/golangci/golangci-lint/cmd/golangci-lint run && pwd
+        run: ls && cat go.mod && go run github.com/golangci/golangci-lint/cmd/golangci-lint run
       - name: Run tests
         working-directory: ./go-app  
         run: go test ./...
