@@ -15,7 +15,7 @@ jobs:
       - name: Print current directory
         run: pwd
       - name: Change directory
-        run: cd ./go-app
+        run: cd go-app
       - name: Print current directory
         run: pwd
       - name: Set up Go
