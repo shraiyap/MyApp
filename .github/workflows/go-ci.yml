@@ -15,7 +15,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.23
+          go-version: 1.22.3
       - name: Install dependencies
         working-directory: ./go-app
         run: go mod tidy
