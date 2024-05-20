@@ -7,7 +7,7 @@ on:
       - 'feature/*'
 
 jobs:
-  build:
+  Setup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -19,9 +19,21 @@ jobs:
       - name: Install dependencies
         working-directory: ./go-app
         run: go mod tidy && go get github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+  Test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Run linter
         working-directory: ./go-app
         run: go run github.com/golangci/golangci-lint/cmd/golangci-lint run
       - name: Run tests
         working-directory: ./go-app  
         run: go test ./...
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Docker Image
+        working-directory: ./go-app
+        run: docker build -t shraiyaparashar31/inc_42/go-app .
+      - name: Push Docker Image
+        working-directory: ./go-app  
+        run: docker push shraiyaparashar31/inc_42/go-app
