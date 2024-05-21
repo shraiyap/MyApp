@@ -7,7 +7,7 @@ on:
       - 'feature/*'
 
 jobs:
-  build:
+  NextJS-CI-Pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
