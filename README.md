@@ -1,4 +1,3 @@
-```markdown
 # MyApp
 
 MyApp is a web application consisting of three independent components developed in Go, Next.js (TypeScript), and WordPress. Each component has its own CI/CD pipeline to ensure quality and efficiency. This repository contains the setup instructions, Docker configuration, and CI/CD workflows for these components.
@@ -146,4 +145,3 @@ Deployment is integrated into the CI/CD pipelines. After a successful build, lin
 - **Coding Standards**: PHPCS with WordPress coding standards
   - Configuration: `wordpress-site/composer.json`
   - CI Integration: Defined in `MyApp/.github/workflows/wordpress-ci.yml`
-```
