@@ -17,10 +17,13 @@ jobs:
          with:
             php-version: '7.4'
        - name: Install dependencies
+         working-directory: ${{ github.workspace }}/wordpress-app
          run: composer install
        - name: Run PHPCS
+         working-directory: ${{ github.workspace }}/wordpress-app
          run: vendor/bin/phpcs --standard=WordPress .
        - name: Run tests
+         working-directory: ${{ github.workspace }}/wordpress-app
          run: vendor/bin/phpunit
        - name: Login to Docker Hub
          run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
