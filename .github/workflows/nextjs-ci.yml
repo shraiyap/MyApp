@@ -22,6 +22,9 @@ jobs:
       - name: Run linter
         working-directory: ${{ github.workspace }}/nextjs-app 
         run: npm run lint
+      - name: Run prettier
+        working-directory: ${{ github.workspace }}/nextjs-app 
+        run: npm run prettier
       - name: Run tests
         working-directory: ${{ github.workspace }}/nextjs-app
         run: npm test
