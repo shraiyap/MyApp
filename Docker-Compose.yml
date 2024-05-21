@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  go-app:
+    image: shraiyaparashar31/go-app:latest
+    ports:
+      - "9080:9080"
+    networks:
+      - my-network
+
+  nextjs-app:
+    image: shraiyaparashar31/nextjs-app:latest
+    ports:
+      - "9090:9090"
+    networks:
+      - my-network
+
+  wordpress-site:
+    image: shraiyaparashar31/wordpress-site:latest
+    ports:
+      - "8081:9085"
+    networks:
+      - my-network
+
+networks:
+  my-network:
