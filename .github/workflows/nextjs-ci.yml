@@ -27,4 +27,4 @@ jobs:
         run: npm run prettier
       - name: Run tests
         working-directory: ${{ github.workspace }}/nextjs-app
-        run: npm test
+        run: npm run test
