@@ -17,8 +17,6 @@ MyApp is a web application consisting of three independent components developed 
   - [Running Locally](#running-locally)
 - [Deployment](#deployment)
 - [Coding Standards](#coding-standards)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Structure
 
